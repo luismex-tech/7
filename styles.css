@@ -1,0 +1,442 @@
+/* =============================================
+   STYLESHEET FINAL PARA AUDIO SPOTS
+   ============================================= */
+
+/* --------------------
+   1. Variables y Estilos Globales
+   -------------------- */
+:root {
+  --primary-color: #25d366; /* Verde WhatsApp */
+  --dark-color: #1a1a1a;
+  --medium-gray: #4a4a4a;
+  --light-gray: #f4f4f4;
+  --white-color: #ffffff;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --header-height: 70px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--medium-gray);
+  background-color: var(--white-color);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2, h3 {
+  color: var(--dark-color);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+p { margin-bottom: 1rem; }
+a { color: var(--primary-color); text-decoration: none; }
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background-color: var(--light-gray);
+}
+
+.section-lead {
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* --------------------
+   2. Header y Navegación
+   -------------------- */
+.site-header {
+  background: var(--white-color);
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--medium-gray);
+  font-weight: 600;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* --------------------
+   3. Botones
+   -------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #20b858;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--dark-color);
+  border: 2px solid var(--medium-gray);
+}
+
+.btn-ghost:hover {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-color: var(--dark-color);
+}
+
+/* --------------------
+   4. Secciones Específicas
+   -------------------- */
+
+/* Hero */
+.hero {
+  padding: 5rem 0;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-copy {
+  flex: 1;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-art {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wave-visual {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 100px;
+}
+
+.bar {
+  width: 15px;
+  background-color: var(--primary-color);
+  animation: wave 1.2s infinite ease-in-out;
+}
+.b1 { height: 20px; animation-delay: 0s; }
+.b2 { height: 50px; animation-delay: 0.1s; }
+.b3 { height: 80px; animation-delay: 0.2s; }
+.b4 { height: 60px; animation-delay: 0.3s; }
+.b5 { height: 30px; animation-delay: 0.4s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1.5); }
+}
+
+/* Servicios */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--white-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Demos (2 columnas) */
+.demos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.demo {
+  border: 1px solid #e0e0e0;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+.demo-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+.muted {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+audio {
+  width: 100%;
+}
+
+/* Testimonios */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.testimonio {
+  background: var(--white-color);
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-color);
+}
+.quote {
+  font-style: italic;
+  font-size: 1.1rem;
+}
+.author {
+  font-weight: 700;
+  text-align: right;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* --------------------
+   5. Formulario de Contacto
+   -------------------- */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+}
+.form-row textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+.error {
+  color: #d93025;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  min-height: 1rem;
+}
+
+/* --------------------
+   6. Estilos para el NUEVO FAQ
+   -------------------- */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.faq-card {
+  background-color: var(--light-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  border-top: 4px solid var(--primary-color);
+}
+.faq-card h3 {
+  font-size: 1.2rem;
+  color: var(--dark-color);
+  margin-bottom: 0.8rem;
+}
+.faq-card p {
+  margin-bottom: 0;
+  color: var(--medium-gray);
+}
+.faq-contact {
+  text-align: center;
+  margin-top: 3rem;
+  font-weight: 600;
+}
+
+/* --------------------
+   7. Botón Flotante y Footer
+   -------------------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.site-footer {
+  background: var(--dark-color);
+  color: #ccc;
+  padding: 2rem 0;
+  text-align: center;
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.footer-nav a {
+  color: var(--white-color);
+}
+
+/* --------------------
+   8. Media Queries (Diseño Responsivo)
+   -------------------- */
+@media (max-width: 860px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+
+  /* Menú Móvil */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: var(--white-color);
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    text-align: center;
+    padding: 0.3rem 0;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  /* Hero */
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-art {
+    margin-top: 2rem;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+
+  /* Demos y FAQ a 1 columna */
+  .demos-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
